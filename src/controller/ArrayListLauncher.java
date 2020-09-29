@@ -35,6 +35,8 @@ public class ArrayListLauncher {
         System.out.println();
         System.out.println(somVanRij(randGetallenLijst));
 
+        // Stap 4: Gemiddelde van rij getallen
+        System.out.println(gemiddeldeVanRij(randGetallenLijst));
     }
 
     public static ArrayList<Integer> maakRandomRijGetallen(int aantalGetallen, int maximum) {
@@ -60,5 +62,9 @@ public class ArrayListLauncher {
         }
 
         return som;
+    }
+
+    public static double gemiddeldeVanRij (ArrayList<Integer> rij) {
+        return (double) somVanRij(rij) / rij.size();
     }
 }
