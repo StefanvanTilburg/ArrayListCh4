@@ -30,10 +30,15 @@ public class ArrayListLauncher {
         for (Integer getal : randGetallenLijst) {
             System.out.print(getal + " ");
         }
+
+        // Stap 3: Som van rij getallen
+        System.out.println();
+        System.out.println(somVanRij(randGetallenLijst));
+
     }
 
     public static ArrayList<Integer> maakRandomRijGetallen(int aantalGetallen, int maximum) {
-        ArrayList<Integer> randomList = new ArrayList();
+        ArrayList<Integer> randomList = new ArrayList<>();
 
         for (int i = 0; i < aantalGetallen; i++) {
             randomList.add(random(maximum));
@@ -45,5 +50,15 @@ public class ArrayListLauncher {
     public static int random(int maximum) {
         final int minimum = 1;
         return ((int) (Math.random() * (maximum - minimum)) + minimum);
+    }
+
+    public static int somVanRij (ArrayList<Integer> rij) {
+        int som = 0;
+
+        for (Integer getal : rij) {
+            som += getal;
+        }
+
+        return som;
     }
 }
