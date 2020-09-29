@@ -37,6 +37,30 @@ public class ArrayListLauncher {
 
         // Stap 4: Gemiddelde van rij getallen
         System.out.println(gemiddeldeVanRij(randGetallenLijst));
+
+        // Stap 5: Lijst van getallen
+        ArrayList<Number> getallenLijst = new ArrayList<>();
+        getallenLijst.add(5);
+        getallenLijst.add(8);
+        getallenLijst.add(13);
+        getallenLijst.add(21);
+        getallenLijst.add(34);
+        getallenLijst.add(3.14);
+        getallenLijst.add(2.72);
+        getallenLijst.add(1.62);
+
+        System.out.println();
+        double som = 0;
+        for (Number number : getallenLijst) {
+            if (number instanceof Integer) {
+                System.out.printf("Integer in lijst : %d\n", number);
+            }
+            if (number instanceof Double) {
+                som += number.doubleValue();
+            }
+        }
+        System.out.printf("Som van gebroken getallen : %f\n", som);
+        System.out.printf("Gemiddelde van de lijst : %f", gemiddeldeVanRijNumber(getallenLijst));
     }
 
     public static ArrayList<Integer> maakRandomRijGetallen(int aantalGetallen, int maximum) {
@@ -66,5 +90,19 @@ public class ArrayListLauncher {
 
     public static double gemiddeldeVanRij (ArrayList<Integer> rij) {
         return (double) somVanRij(rij) / rij.size();
+    }
+
+    public static double somVanRijNumber (ArrayList<Number> rij) {
+        double som = 0;
+
+        for (Number getal : rij) {
+            som += getal.doubleValue();
+        }
+
+        return som;
+    }
+
+    public static double gemiddeldeVanRijNumber (ArrayList<Number> rij) {
+        return somVanRijNumber(rij) / rij.size();
     }
 }
