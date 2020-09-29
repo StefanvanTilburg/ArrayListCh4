@@ -1,6 +1,9 @@
 package controller;
 
+import model.Auto;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Stefan van Tilburg
@@ -61,6 +64,25 @@ public class ArrayListLauncher {
         }
         System.out.printf("Som van gebroken getallen : %f\n", som);
         System.out.printf("Gemiddelde van de lijst : %f", gemiddeldeVanRijNumber(getallenLijst));
+
+        // Stap 6: Lijst van auto's
+        System.out.println();
+        ArrayList<Auto> autos = new ArrayList<>();
+        autos.add(new Auto("Ferari", 2000));
+        autos.add(new Auto("Mercedes", 2198));
+        autos.add(new Auto("DAF", 5155));
+        autos.add(new Auto("Citroen", 1645));
+        autos.add(new Auto("Renault", 1700));
+        autos.add(new Auto("Renault", 1000));
+        autos.add(new Auto("Lambourgini", 1422));
+        autos.add(new Auto("Ford", 3350));
+
+        Collections.sort(autos);
+
+        System.out.println();
+        for (Auto auto : autos) {
+            System.out.println(auto);
+        }
     }
 
     public static ArrayList<Integer> maakRandomRijGetallen(int aantalGetallen, int maximum) {
